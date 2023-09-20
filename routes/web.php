@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -21,6 +22,7 @@ Route::get('/', [PageController::class, 'welcome']);
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
+    Route::resource('cars', CarController::class);
     Route::resource('users', UserController::class);
 });
 

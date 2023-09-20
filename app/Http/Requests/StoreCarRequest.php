@@ -11,7 +11,7 @@ class StoreCarRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'brand' => 'required|max:225',
+            'model' => 'required|max:225',
+            'km' => 'required|numeric',
+            'year' => 'required|numeric',
+            'description' => 'required|string',
+            'price'=> 'required|numeric',
         ];
     }
 }

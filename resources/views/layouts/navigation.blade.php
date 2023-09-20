@@ -19,6 +19,10 @@
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                         {{ __('Utilisateurs') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('cars.index')" :active="request()->routeIs('cars.index')">
+                        {{ __('Mes annonces') }}
+                    </x-nav-link>
                 </div>
             </div>
 
