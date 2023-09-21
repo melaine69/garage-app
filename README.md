@@ -42,8 +42,14 @@ Site web pour le Garage V.Parrot.
    php artisan migrate:fresh --seed
    ```
    
-5. Produire les ressources
+5. Produire les ressources :
 
    ```bash
    npm run build
    ```
+
+6. Lancer le serveur :
+
+   ```bash
+   php artisan serve
+   ```  
