@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('opening_hours', function (Blueprint $table) {
             $table->id();
-            $table->enum('day_of_week', ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])->unique();
-            $table->time('from_time');
-            $table->time('to_time');
+            $table->string('type')->default('default')->unique();
+            $table->longText('text');
             $table->timestamps();
         });
     }

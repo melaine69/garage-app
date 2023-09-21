@@ -55,7 +55,9 @@ class PageController extends Controller
     }
 
     public function opening() {
-        return view('pages.opening');
+        $openingHour = OpeningHour::where('type', 'default')->first();
+
+        return view('pages.opening', compact('openingHour'));
     }
 
     public function contact() {

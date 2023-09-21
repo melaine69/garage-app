@@ -7,15 +7,8 @@
         <p>Chez {{ config('app.name') }}, nous comprenons l'importance de la commodité pour nos clients. Voici nos horaires d'ouverture réguliers pour que vous puissiez planifier votre visite en conséquence.</p>
 
         <h2>Heures d'ouverture</h2>
-        <ul>
-            <li><strong>Lundi</strong> : </li>
-            <li><strong>Mardi</strong> : </li>
-            <li><strong>Mercredi</strong> : </li>
-            <li><strong>Jeudi</strong> : </li>
-            <li><strong>Vendredi</strong> : </li>
-            <li><strong>Samedi</strong> : </li>
-            <li><strong>Dimanche</strong> : </li>
-        </ul>
+
+        {!! nl2br($openingHour?->text) !!}
 
         <p>Veuillez noter que nous sommes fermés le dimanche, mais nous sommes disponibles du lundi au samedi pour répondre à tous vos besoins en matière de réparation et d'entretien automobile.</p>
 

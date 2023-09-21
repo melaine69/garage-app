@@ -8,38 +8,24 @@ use Illuminate\Http\Request;
 class OpeningController extends Controller
 {
     public function create() {
-        return view('opening');
+        $openingHour = OpeningHour::where('type', 'default')->first();
+
+        return view('opening', compact('openingHour'));
     }
 
     public function store(Request $request) {
-        // Validate the request data for each day
-        $daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        $request->validate([
+            'text' => 'required|string'
+        ]);
 
-        foreach ($daysOfWeek as $day) {
-            $rules = [
-                "opening_hours.{$day}.from" => 'required|date_format:H:i:s',
-                "opening_hours.{$day}.to" => 'required|date_format:H:i:s|after:opening_hours.'.$day.'.from_time',
-            ];
+        $openingHour = OpeningHour::where('type', 'default')->first();
 
-            $request->validate($rules);
-
-            // Check if an opening hour record already exists for the specified day
-            $openingHour = OpeningHour::where('day_of_week', $day)->first();
-
-            if ($openingHour) {
-                // If a record exists, update it with the new values
-                $openingHour->update([
-                    'from_time' => $request->input("opening_hours.{$day}.from"),
-                    'to_time' => $request->input("opening_hours.{$day}.to"),
-                ]);
-            } else {
-                // If no record exists, create a new one
-                OpeningHour::create([
-                    'day_of_week' => $day,
-                    'from_time' => $request->input("opening_hours.{$day}.from"),
-                    'to_time' => $request->input("opening_hours.{$day}.to"),
-                ]);
-            }
+        if ($openingHour) {
+            $openingHour->update(['text' => $request->get('text')]);
+        } else {
+            OpeningHour::create([
+                'text' => $request->get('text')
+            ]);
         }
 
         return redirect()->back();

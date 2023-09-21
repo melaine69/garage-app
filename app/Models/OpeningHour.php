@@ -10,8 +10,6 @@ class OpeningHour extends Model
     use HasFactory;
 
     protected $fillable = [
-        'day_of_week',
-        'from_time',
-        'to_time',
+        'text',
     ];
 }

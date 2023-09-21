@@ -12,41 +12,11 @@
     <form method="post" action="{{ route('opening.store') }}" class="mt-6 space-y-6">
         @csrf
 
-        <table>
-            <thead>
-            <tr>
-                <th>{{ __('Jour') }}</th>
-                <th>{{ __('De') }}</th>
-                <th>{{ __('À') }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @php
-                $daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-                $hoursOfDay = [];
-                for ($hour = 0; $hour < 24; $hour++) {
-                    $hoursOfDay[sprintf('%02d:00', $hour)] = sprintf('%02d:00', $hour);
-                }
-            @endphp
-
-            @foreach($daysOfWeek as $day)
-                <tr>
-                    <td>
-                        <label>
-                            <x-checkbox-input type="checkbox" name="opening_hours[{{ $day }}][enabled]" value="1" />
-                            {{ $day }}
-                        </label>
-                    </td>
-                    <td>
-                        <x-select name="opening_hours[{{ $day }}][from]" :options="$hoursOfDay" />
-                    </td>
-                    <td>
-                        <x-select name="opening_hours[{{ $day }}][to]" :options="$hoursOfDay" />
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+        <div>
+            <x-input-label for="email" :value="__('Horaires')" />
+            <x-textarea-input id="text" name="text" class="mt-1 block w-full" rows="8" value="{!! old('text', $openingHour?->text) !!}" required />
+            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+        </div>
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Sauvegarder') }}</x-primary-button>
