@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::post('/', [PageController::class, 'filters'])->name('filters');
 Route::get('/horaires', [PageController::class, 'opening'])->name('opening');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 

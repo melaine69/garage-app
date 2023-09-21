@@ -8,25 +8,18 @@
 
         <h2>Coordonnées</h2>
         <p>
-            Adresse :
-            [Adresse de Votre Garage]
-            [Code postal, Ville]
+            Adresse : 12 place de la liberté - 69003 Lyon
         </p>
 
         <p>
-            Téléphone :
-            Téléphone : [Numéro de Téléphone]
-            Fax : [Numéro de Fax]
+            Téléphone : 04 78 67 54 39
         </p>
 
         <p>
-            Adresse Email :
-            Email : [Adresse Email]
+            Adresse Email : garage-parrot@mail.com
         </p>
 
-        <h2>Plan d'Accès</h2>
-        <p>Si vous avez besoin d'indications pour nous rendre visite, veuillez utiliser la carte ci-dessous pour trouver notre emplacement exact.</p>
-
-        [Insérer une carte ou un lien vers une carte]
+        <h2>Accès</h2>
+        <p> Metro B - Arrêt Brotteaux </p>
     </div>
 </x-guest-layout>

@@ -9,10 +9,40 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function welcome() {
-        $cars = Car::all();
+    public function welcome(Request $request) {
+        $filters = ['km', 'price', 'year'];
+        $query = Car::query();
 
-        return view('welcome', compact('cars'));
+        foreach ($filters as $filter) {
+            $minKey = $filter . '_min';
+            $maxKey = $filter . '_max';
+
+            if ($request->filled($minKey)) {
+                $query->where($filter, '>=', $request->$minKey);
+            }
+
+            if ($request->filled($maxKey)) {
+                $query->where($filter, '<=', $request->$maxKey);
+            }
+        }
+
+        $cars = $query->paginate(21);
+
+        $appliedFilters = [];
+        foreach ($filters as $filter) {
+            $minKey = $filter . '_min';
+            $maxKey = $filter . '_max';
+
+            if ($request->input($minKey)) {
+                $appliedFilters[$minKey] = $request->input($minKey);
+            }
+
+            if ($request->input($maxKey)) {
+                $appliedFilters[$maxKey] = $request->input($maxKey);
+            }
+        }
+
+        return view('welcome', compact('cars', 'appliedFilters'));
     }
 
     public function dashboard() {
