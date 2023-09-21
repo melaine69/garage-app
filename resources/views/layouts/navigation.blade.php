@@ -21,7 +21,7 @@
                     </x-nav-link>
 
                     <x-nav-link :href="route('cars.index')" :active="request()->routeIs('cars.index')">
-                        {{ __('Mes annonces') }}
+                        {{ __('Annonces') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('opening.create')" :active="request()->routeIs('opening.create')">

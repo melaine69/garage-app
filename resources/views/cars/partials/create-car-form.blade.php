@@ -5,7 +5,6 @@
     for ($i = $currentYear; $i >= $currentYear - 49; $i--) {
         $years[$i] = $i;
     }
-
 @endphp
 
 <section>
@@ -15,14 +14,13 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ $car ?__("Utilisez ce formulaire pour modifier votre annonce.") :__("Utilisez ce formulaire et ajouter une nouvelle annonce.") }}
+            {{ $car ?__("Utilisez ce formulaire pour modifier une annonce.") :__("Utilisez ce formulaire et ajouter une nouvelle annonce.") }}
         </p>
     </header>
 
     <form method="post" action="{{ $car ? route("cars.update", $car) : route('cars.store') }}" class="mt-6 space-y-6">
         @csrf
-        @if($car) @method('patch')
-        @endif
+        @if($car) @method('patch') @endif
 
         <div>
             <x-input-label for="brand" :value="__('Marque')" />
@@ -43,7 +41,7 @@
         </div>
 
         <div>
-            <x-input-label for="km" :value="__('Km')" />
+            <x-input-label for="km" :value="__('Kilométrage (km)')" />
             <x-text-input id="km" name="km" type="number" class="mt-1 block w-full" :value="old('km', $car?->km)" min="1" required />
             <x-input-error class="mt-2" :messages="$errors->get('km')" />
         </div>
@@ -55,13 +53,13 @@
         </div>
 
         <div>
-            <x-input-label for="price" :value="__('Price')" />
+            <x-input-label for="price" :value="__('Prix (€)')" />
             <x-text-input id="price" name="price" type="number" class="mt-1 block w-full" :value="old('price', $car?->price)" min="1" required />
             <x-input-error class="mt-2" :messages="$errors->get('price')" />
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ $car ? __("Modifier mon annonce") : __('Créer mon annonce') }}</x-primary-button>
+            <x-primary-button>{{ $car ? __("Modifier") : __('Créer') }}</x-primary-button>
         </div>
     </form>
 </section>

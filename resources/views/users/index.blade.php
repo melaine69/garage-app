@@ -5,7 +5,7 @@
                 {{ __('Liste des utilisateurs') }}
             </h2>
 
-            <a class="px-3 py-2 font-medium rounded-sm text-white bg-teal-600" href="{{ route('users.create') }}">{{ __('Ajouter un utilisateur') }}</a>
+            <a class="px-3 py-2 font-medium rounded-sm text-white bg-primary transition hover:bg-opacity-80" href="{{ route('users.create') }}">{{ __('Ajouter un utilisateur') }}</a>
         </div>
     </x-slot>
 
@@ -25,8 +25,8 @@
                         <tr>
                             <th class="p-2 text-left" >{{ __('Nom') }}</th>
                             <th class="p-2 text-left">{{ __('Email') }}</th>
-                            <th class="p-2 text-left">{{ __('Role') }}</th>
-                            <th class="p-2 text-left">{{ __('Actions') }}</th>
+                            <th class="p-2 text-left">{{ __('Rôle') }}</th>
+                            <th class="p-2 text-left"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,7 +36,8 @@
                             <td class="px-2 py-3 text-gray-600 border-b">{{ $user->email }}</td>
                             <td class="px-2 py-3 text-gray-600 border-b">{{ __("$user->role") }}</td>
                             <td class="px-2 py-3 text-gray-600 border-b">
-                                <a href="{{ route('users.edit', $user) }}">{{ __('Modifier') }} </a> </td>
+                                <a class="font-medium text-primary" href="{{ route('users.edit', $user) }}" title="{{ __("Modifier l'annonce") }}">{{ __('Modifier') }}</a>
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>

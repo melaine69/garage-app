@@ -5,7 +5,7 @@
                 {{ __('Modifier une annonce') }}
             </h2>
 
-            <a class="underline text-gray-800 text-sm" href="{{ route('cars.index') }}">{{ __('Voir toutes mes annonces') }}</a>
+            <a class="underline text-gray-800 text-sm" href="{{ route('cars.index') }}">{{ __('Voir toutes les annonces') }}</a>
         </div>
     </x-slot>
 
@@ -13,7 +13,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('cars.partials.create-car-form');
+                    @include('cars.partials.create-car-form')
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('cars.partials.delete-car-form')
                 </div>
             </div>
         </div>

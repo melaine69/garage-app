@@ -56,7 +56,7 @@
                             <li>{{ __('Année :year', ['year' => $car->year]) }}</li>
                             <li>{{ __(':km km', ['km' => $car->km]) }}</li>
                         </ul>
-                        <span class="px-2 py-1 font-bold text-white rounded bg-fuchsia-400">
+                        <span class="px-2 py-1 font-bold text-white rounded bg-primary">
                         {{ __(':price €', ['price' => $car->price]) }}
                     </span>
                     </div>

@@ -22,6 +22,9 @@ Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::post('/', [PageController::class, 'filters'])->name('filters');
 Route::get('/horaires', [PageController::class, 'opening'])->name('opening');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('privacy', function() {
+    return view('pages.privacy');
+})->name('privacy');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
@@ -32,6 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
 
     Route::get('opening', [OpeningController::class, 'create'])->name('opening.create');
     Route::post('opening', [OpeningController::class, 'store'])->name('opening.store');
+
 });
 
 Route::middleware('auth')->group(function () {

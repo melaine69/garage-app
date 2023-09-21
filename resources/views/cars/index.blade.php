@@ -2,10 +2,10 @@
     <x-slot name="header">
         <div class="flex items-center justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Mes annonces') }}
+                {{ __('Annonces') }}
             </h2>
 
-            <a class="px-3 py-2 font-medium rounded-sm text-white bg-teal-600" href="{{ route('cars.create') }}">{{ __('Ajouter une annonce') }}</a>
+            <a class="px-3 py-2 font-medium rounded-sm text-white bg-primary transition hover:bg-opacity-80" href="{{ route('cars.create') }}">{{ __('Ajouter une annonce') }}</a>
         </div>
     </x-slot>
 
@@ -25,7 +25,10 @@
                             <th class="p-2 text-left" >{{ __('Marque') }}</th>
                             <th class="p-2 text-left">{{ __('Modèle') }}</th>
                             <th class="p-2 text-left">{{ __('Année') }}</th>
+                            <th class="p-2 text-left">{{ __('Kilométrage') }}</th>
                             <th class="p-2 text-left">{{ __('Prix') }}</th>
+                            <th class="p-2 text-left">{{ __('Crée par') }}</th>
+                            <th class="p-2 text-left"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -37,7 +40,11 @@
                                 <td class="px-2 py-3 text-gray-600 border-b">{{ __(':km km', ['km' =>  $car->km]) }}</td>
                                 <td class="px-2 py-3 text-gray-600 border-b">{{ __(':price €', ['price' =>  $car->price]) }}</td>
                                 <td class="px-2 py-3 text-gray-600 border-b">
-                                    <a href="{{ route('cars.edit', $car) }}">{{ __('Modifier') }} </a> </td>
+                                    <a class="font-medium text-primary" href="{{ route('users.edit', $car->user) }}">{{ $car->user->name }}</a>
+                                </td>
+                                <td class="px-2 py-3 text-gray-600 border-b">
+                                    <a class="font-medium text-primary" href="{{ route('cars.edit', $car) }}">{{ __('Modifier') }}</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

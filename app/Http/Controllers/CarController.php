@@ -14,8 +14,7 @@ class CarController extends Controller
      */
     public function index(Request $request)
     {
-        $currentUser = $request->user();
-        $cars = $currentUser->cars;
+        $cars = Car::orderBy('created_at')->get();
 
         return view('cars.index', compact('cars'));
     }

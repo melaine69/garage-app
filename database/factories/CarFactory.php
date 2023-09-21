@@ -18,7 +18,9 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
+            'user_id' => User::factory()->create([
+                'role' => 'employee'
+            ]),
             'brand' => fake()->randomElement(['Audi', 'Peugeot', 'Bmw', 'Renault', 'Fiat']),
             'model' => fake()->company(),
             'year' => fake()->year(),

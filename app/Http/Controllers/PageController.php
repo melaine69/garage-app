@@ -46,12 +46,12 @@ class PageController extends Controller
     }
 
     public function dashboard() {
+        $adminCount = User::where('role', 'admin')->count();
         $employeeCount = User::where('role', 'employee')->count();
-        $customerCount = User::where('role', 'customer')->count();
         $carCount = Car::count();
 
 
-        return view('dashboard', compact('employeeCount', 'customerCount', 'carCount'));
+        return view('dashboard', compact('adminCount', 'employeeCount', 'carCount'));
     }
 
     public function opening() {

@@ -12,16 +12,16 @@
                     {{ __("Nombre des administrateurs") }}
                 </div>
                 <div class="text-2xl sm:text-3xl  font-bold text-black">
-                    {{ $employeeCount }}
+                    {{ $adminCount }}
                 </div>
             </div>
 
             <div class="p-6 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="mb-1 text-sm font-medium text-gray-600">
-                    {{ __("Nombre des clients") }}
+                    {{ __("Nombre des employés") }}
                 </div>
                 <div class="text-2xl sm:text-3xl  font-bold text-black">
-                    {{ $customerCount }}
+                    {{ $employeeCount }}
                 </div>
             </div>
 

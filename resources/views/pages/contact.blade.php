@@ -8,15 +8,15 @@
 
         <h2>Coordonnées</h2>
         <p>
-            Adresse : 12 place de la liberté - 69003 Lyon
+            Adresse : <span class="text-primary">12 place de la liberté - 69003 Lyon</span>
         </p>
 
         <p>
-            Téléphone : 04 78 67 54 39
+            Téléphone : <span class="text-primary">04 78 67 54 39</span>
         </p>
 
         <p>
-            Adresse Email : garage-parrot@mail.com
+            Adresse E-mail : <a href="mailto:garage-parrot@mail.com" class="text-primary">garage-parrot@gmail.com</a>
         </p>
 
         <h2>Accès</h2>
