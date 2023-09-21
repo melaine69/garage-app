@@ -22,9 +22,7 @@ Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::post('/', [PageController::class, 'filters'])->name('filters');
 Route::get('/horaires', [PageController::class, 'opening'])->name('opening');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('privacy', function() {
-    return view('pages.privacy');
-})->name('privacy');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');

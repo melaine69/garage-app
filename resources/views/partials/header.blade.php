@@ -1,8 +1,7 @@
 <header class="flex-shrink-0 border-b border-gray-100">
     <div class="flex items-center mx-auto max-w-7xl px-6 lg:px-8 py-4">
-        <a class="text-xl font-bold" href="{{ route('welcome') }}" title="{{ config('app.name') }}">
-            <span class="text-black">Garage</span>
-            <span class="text-red-600">V.Parrot</span>
+        <a class="text-xl font-bold text-primary" href="{{ route('welcome') }}" title="{{ config('app.name') }}">
+            {{ config('app.name') }}
         </a>
 
         <nav class="hidden sm:block ml-6">
