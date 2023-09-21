@@ -23,6 +23,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    const ADMIN_ID = 1;
+
     public function cars() {
         return $this->hasMany(Car::class);
     }

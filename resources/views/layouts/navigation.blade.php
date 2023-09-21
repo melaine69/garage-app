@@ -16,17 +16,21 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    @can('viewAny', \App\Models\User::class)
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                         {{ __('Utilisateurs') }}
                     </x-nav-link>
+                    @endcan
 
                     <x-nav-link :href="route('cars.index')" :active="request()->routeIs('cars.index')">
                         {{ __('Annonces') }}
                     </x-nav-link>
 
+                    @can('create', \App\Models\OpeningHour::class)
                     <x-nav-link :href="route('opening.create')" :active="request()->routeIs('opening.create')">
                         {{ __('Horaires') }}
                     </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
