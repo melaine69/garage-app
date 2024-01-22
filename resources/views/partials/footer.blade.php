@@ -5,7 +5,7 @@
         <ul class="sm:ml-auto flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
             <li><a class="font-medium text-gray-600 hover:text-black" href="{{ route('opening') }}">{{ __("Horaires d'ouverture") }}</a></li>
             <li><a class="font-medium text-gray-600 hover:text-black" href="{{ route('contact') }}">{{ __('Contact') }}</a></li>
-            <li><a class="font-medium text-gray-600 hover:text-black" href="{{ route('terms') }}">{{ __('Mentions légales') }}</a></li>
+            <li><a class="font-medium text-gray-600 hover:text-black" href="{{ route('terms') }}">{{ __('Politique de confidentialité') }}</a></li>
         </ul>
     </div>
 </footer>

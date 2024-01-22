@@ -4,7 +4,7 @@
     </div>
 
     <div class="mx-auto max-w-4xl prose prose-lg">
-        <p>Chez {{ config('app.name') }}, nous sommes dévoués à vous offrir des services de réparation et d'entretien automobile de première qualité. Si vous avez des questions, des préoccupations ou si vous souhaitez planifier un rendez-vous avec notre équipe de professionnels qualifiés, n'hésitez pas à nous contacter. Nous sommes là pour vous aider.</p>
+        <p>Chez {{ config('app.name') }}, nous sommes dévoués à vous offrir des services de réparation et d'entretien automobile de première qualité ou vous conseiller sur le choix de votre véhicule d'occasion.</p>
 
         <h2>Coordonnées</h2>
         <p>
